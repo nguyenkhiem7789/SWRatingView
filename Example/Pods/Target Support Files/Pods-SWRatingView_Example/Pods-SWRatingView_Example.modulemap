@@ -1,0 +1,6 @@
+framework module Pods_SWRatingView_Example {
+  umbrella header "Pods-SWRatingView_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
