@@ -24,7 +24,7 @@ pod 'SWRatingView'
 
 ## How to use it?
 
-In storyboard, you need create a CircularProgressView
+In storyboard, you need create a RatingView
 <img src="https://user-images.githubusercontent.com/18132015/80345256-114c3b00-8893-11ea-9fb8-9e22a253e816.png"/>
 
 ## Author
