@@ -7,6 +7,8 @@
 
 ## Example
 
+https://www.youtube.com/watch?v=K5JsYP5WsIw&feature=youtu.be
+
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
@@ -19,6 +21,11 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'SWRatingView'
 ```
+
+## How to use it?
+
+In storyboard, you need create a CircularProgressView
+<img src="https://user-images.githubusercontent.com/18132015/80345079-c3cfce00-8892-11ea-8181-5b7033a41a82.png"/>
 
 ## Author
 
