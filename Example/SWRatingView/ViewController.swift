@@ -7,18 +7,27 @@
 //
 
 import UIKit
+import SWRatingView
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var ratingView: RatingView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        ratingView.backgroundColor = UIColor.clear
+        ratingView.contentMode = UIView.ContentMode.scaleAspectFit
+//        ratingView.delegate = self
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+}
+
+extension ViewController: RatingViewDelegate {
+    func floatRatingView(_ ratingView: RatingView, isUpdating rating: Double) {
+
     }
 
+    func floatRatingView(_ ratingView: RatingView, didUpdate rating: Double) {
+    }
 }
 
