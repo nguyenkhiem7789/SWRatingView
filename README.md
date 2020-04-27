@@ -25,7 +25,7 @@ pod 'SWRatingView'
 ## How to use it?
 
 In storyboard, you need create a CircularProgressView
-<img src="https://user-images.githubusercontent.com/18132015/80345079-c3cfce00-8892-11ea-8181-5b7033a41a82.png"/>
+<img src="https://user-images.githubusercontent.com/18132015/80345256-114c3b00-8893-11ea-9fb8-9e22a253e816.png"/>
 
 ## Author
 
