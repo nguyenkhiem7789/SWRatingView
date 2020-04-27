@@ -20,14 +20,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cv7-WO-NUN" customClass="RatingView" customModule="SWRatingView">
-                                <rect key="frame" x="16" y="120" width="343" height="30"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="16" y="130" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="5Am-vk-Amx"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="star_gray"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="star_red"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="star_big_gray"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="maxRating">
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
@@ -35,20 +34,71 @@
                                         <integer key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="rating">
-                                        <real key="value" value="2.5"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="star_big"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBt-K1-mtL">
+                                <rect key="frame" x="16" y="210" width="343" height="40"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rZz-pF-c5q">
+                                        <rect key="frame" x="0.0" y="0.0" width="249" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2Q-kt-X8c">
+                                        <rect key="frame" x="253" y="0.0" width="90" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="tCC-88-9j7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="Update"/>
+                                        <connections>
+                                            <action selector="clickUpdateButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="G0l-fA-aVe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="b2Q-kt-X8c" secondAttribute="trailing" id="19V-L6-by4"/>
+                                    <constraint firstItem="rZz-pF-c5q" firstAttribute="leading" secondItem="cBt-K1-mtL" secondAttribute="leading" id="3rO-h5-0Hu"/>
+                                    <constraint firstAttribute="bottom" secondItem="rZz-pF-c5q" secondAttribute="bottom" id="CQS-n5-2dq"/>
+                                    <constraint firstItem="b2Q-kt-X8c" firstAttribute="leading" secondItem="rZz-pF-c5q" secondAttribute="trailing" constant="4" id="DAt-nq-Rwg"/>
+                                    <constraint firstItem="rZz-pF-c5q" firstAttribute="top" secondItem="cBt-K1-mtL" secondAttribute="top" id="OaZ-KG-BJO"/>
+                                    <constraint firstAttribute="bottom" secondItem="b2Q-kt-X8c" secondAttribute="bottom" id="adQ-P6-R8n"/>
+                                    <constraint firstAttribute="height" constant="40" id="d0r-iw-gQm"/>
+                                    <constraint firstItem="b2Q-kt-X8c" firstAttribute="top" secondItem="cBt-K1-mtL" secondAttribute="top" id="rT5-HD-p9Y"/>
+                                </constraints>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PSY-nu-Ich">
+                                <rect key="frame" x="122" y="50" width="131" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="131" id="b7d-ej-kqc"/>
+                                    <constraint firstAttribute="height" constant="30" id="w8A-S5-cOJ"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Whole"/>
+                                    <segment title="Half"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="PSY-nu-Ich" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="H0m-RT-nDl"/>
+                            <constraint firstItem="cBt-K1-mtL" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="HWO-1E-nER"/>
+                            <constraint firstItem="cBt-K1-mtL" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Ot1-vL-NfM"/>
                             <constraint firstItem="Cv7-WO-NUN" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="SRB-ew-ZWk"/>
+                            <constraint firstItem="PSY-nu-Ich" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="50" id="hl1-Kj-Nxv"/>
+                            <constraint firstItem="Cv7-WO-NUN" firstAttribute="top" secondItem="PSY-nu-Ich" secondAttribute="bottom" constant="50" id="lCV-Qh-tzk"/>
                             <constraint firstItem="Cv7-WO-NUN" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="sTe-TB-KfG"/>
-                            <constraint firstItem="Cv7-WO-NUN" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="120" id="zjD-Wb-HXj"/>
+                            <constraint firstItem="cBt-K1-mtL" firstAttribute="top" secondItem="Cv7-WO-NUN" secondAttribute="bottom" constant="50" id="szG-gk-4v3"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ratingValueTextField" destination="rZz-pF-c5q" id="Jpd-rf-YDN"/>
                         <outlet property="ratingView" destination="Cv7-WO-NUN" id="wWT-Ft-uH7"/>
+                        <outlet property="typeControlView" destination="PSY-nu-Ich" id="gW4-kb-1uv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -57,7 +107,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="star_gray" width="30" height="28"/>
-        <image name="star_red" width="30" height="28"/>
+        <image name="star_big" width="312" height="298"/>
+        <image name="star_big_gray" width="312" height="298"/>
     </resources>
 </document>

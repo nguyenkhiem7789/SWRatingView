@@ -136,6 +136,16 @@ open class RatingView: UIView {
         fullImageViews.removeAll(keepingCapacity: false)
     }
 
+    /// set rating value
+    public func setRating(rating: Double) {
+        if type.supportsFractions() {
+            self.rating = rating
+        } else {
+            print("round(rating)\(round(rating))")
+            self.rating = round(rating)
+        }
+    }
+
     /// Refresh hides or shows full images
     private func refresh() {
         for i in 0 ..< fullImageViews.count {
@@ -147,7 +157,8 @@ open class RatingView: UIView {
             else if rating > Double(i) && rating < Double(i + 1) {
                 /// Set mask layer for full image
                 let maskLayer = CALayer()
-                maskLayer.frame = CGRect(x: 0, y: 0, width: CGFloat(rating-Double(i))*imageView.frame.size.width, height: imageView.frame.size.height)
+                maskLayer.frame = CGRect(x: 0, y: 0, width: CGFloat(rating-Double(i)) * imageView.frame.size.width, height: imageView.frame.size.height)
+                maskLayer.backgroundColor = UIColor.red.cgColor
                 imageView.layer.mask = maskLayer
                 imageView.isHidden = false
             } else {
@@ -214,8 +225,7 @@ open class RatingView: UIView {
         let maxImageWidth = max(minImageSize.width, desiredImageWidth)
         let maxImageHeight = max(minImageSize.height, frame.size.height)
         let imageViewSize = sizeForImage(emptyImage, inSize: CGSize(width: maxImageWidth, height: maxImageHeight))
-        let imageXOffset = (frame.size.width - (imageViewSize.width * CGFloat(emptyImageViews.count))) / CGFloat((emptyImageViews.count - 1))
-        print("XimageXOffset = \(imageXOffset)")
+        let imageXOffset = (frame.size.width - (imageViewSize.width * CGFloat(emptyImageViews.count)))            / CGFloat((emptyImageViews.count - 1))
         for i in 0 ..< maxRating {
             let imageFrame = CGRect(x: i == 0 ? 0 : CGFloat(i) * (imageXOffset + imageViewSize.width), y: 0, width: imageViewSize.width, height: imageViewSize.height)
             var imageView = emptyImageViews[i]

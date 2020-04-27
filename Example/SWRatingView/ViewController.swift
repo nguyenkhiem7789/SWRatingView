@@ -11,13 +11,34 @@ import SWRatingView
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var typeControlView: UISegmentedControl!
+
     @IBOutlet weak var ratingView: RatingView!
+
+    @IBOutlet weak var ratingValueTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         ratingView.backgroundColor = UIColor.clear
         ratingView.contentMode = UIView.ContentMode.scaleAspectFit
-//        ratingView.delegate = self
+        ratingView.delegate = self
+
+        typeControlView.addTarget(self, action: #selector(indexChanged(_:)), for: .valueChanged)
+    }
+
+    @objc func indexChanged(_ sender: UISegmentedControl) {
+        if typeControlView.selectedSegmentIndex == 0 {
+            self.ratingView.type = .wholeRatings
+        } else if typeControlView.selectedSegmentIndex == 1 {
+            self.ratingView.type = .halfRatings
+        }
+    }
+
+    @IBAction func clickUpdateButton(_ sender: Any) {
+        if let newRating = ratingValueTextField.text, let value = Double(newRating) {
+            ratingView.setRating(rating: value)
+            ratingValueTextField.text = nil
+        }
     }
 
 }
